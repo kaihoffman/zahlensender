@@ -17,10 +17,10 @@
 
 require 'twitter'
 client = Twitter::REST::Client.new do |config|
-  config.consumer_key        = "LuqvFJLlBYw6s164PoLETBEVk"
-  config.consumer_secret     = "5Mo7L82jqZXX9E7s2JYJRrp9q41PgLnUW7rJwhrjWtL6NxSyqy"
-  config.access_token        = "1078743724702814208-jWeiNP7WWi9Lwa3X0QMc5iePPEVDuI"
-  config.access_token_secret = "iwzu5DZ2N2D0EMTaDR8XrP8Y0M4BtI9PeQrqQSgGpHTlt"
+  config.consumer_key        = "YOUR_CONSUMER_KEY"
+  config.consumer_secret     = "YOUR_CONSUMER_SECRET"
+  config.access_token        = "YOUR_ACCESS_TOKEN"
+  config.access_token_secret = "YOUR_SECRET_TOKEN"
 end
 
 # Generate the tweet payload

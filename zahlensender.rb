@@ -13,25 +13,35 @@
 # Uses the Ruby Twitter gem - sends tweets using:
 # client.update("Tweet text here")
 
+# Configure Twitter API client data by editing in the keys below
+
+require 'twitter'
+client = Twitter::REST::Client.new do |config|
+  config.consumer_key        = "YOUR_CONSUMER_KEY"
+  config.consumer_secret     = "YOUR_CONSUMER_SECRET"
+  config.access_token        = "YOUR_ACCESS_TOKEN"
+  config.access_token_secret = "YOUR_ACCESS_SECRET"
+end
+
 # Generate the tweet payload
 def create_array
-    @payload = 60.times.map{ rand(9) }
+  @payload = 60.times.map{ rand(9) }
 end
 
 def print_header
-    puts "ACHTUNG ACHTUNG"
+  puts "ACHTUNG ACHTUNG"
 end
 
 def print_footer
-    puts "ENDE ENDE"
+  puts "ENDE ENDE"
 end
 
 def print_numbers
-    index = 0
-    12.times do
-        puts @payload[index..(index + 4 )].join(" ")
-        index += 5
-    end
+  index = 0
+  12.times do
+    puts @payload[index..(index + 4)].join("  ")
+    index += 5
+  end
 end
 
 # Send tweet (in test, print to console)

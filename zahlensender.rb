@@ -15,12 +15,28 @@
 
 # Generate the tweet payload
 def create_array
-    @payload = 60.times.map{ Random.rand(9) }
+    @payload = 60.times.map{ rand(9) }
 end
 
+def print_header
+    puts "ACHTUNG ACHTUNG"
+end
+
+def print_footer
+    puts "ENDE ENDE"
+end
+
+def print_numbers
+    index = 0
+    12.times do
+        puts @payload[index..(index + 4 )].join(" ")
+        index += 5
+    end
+end
 
 # Send tweet (in test, print to console)
 # client.update("")
 create_array
-puts "ACHTUNG ACHTUNG\n#{@payload[0..4].join(" ")}\n#{@payload[5..9].join(" ")}
-#{@payload[10..14].join(" ")}\n#{@payload[15..19].join(" ")}\nENDE ENDE"
+print_header
+print_numbers
+print_footer

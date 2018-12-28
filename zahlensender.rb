@@ -17,10 +17,10 @@
 
 require 'twitter'
 client = Twitter::REST::Client.new do |config|
-  config.consumer_key        = "YOUR_CONSUMER_KEY"
-  config.consumer_secret     = "YOUR_CONSUMER_SECRET"
-  config.access_token        = "YOUR_ACCESS_TOKEN"
-  config.access_token_secret = "YOUR_ACCESS_SECRET"
+  config.consumer_key        = "LuqvFJLlBYw6s164PoLETBEVk"
+  config.consumer_secret     = "5Mo7L82jqZXX9E7s2JYJRrp9q41PgLnUW7rJwhrjWtL6NxSyqy"
+  config.access_token        = "1078743724702814208-jWeiNP7WWi9Lwa3X0QMc5iePPEVDuI"
+  config.access_token_secret = "iwzu5DZ2N2D0EMTaDR8XrP8Y0M4BtI9PeQrqQSgGpHTlt"
 end
 
 # Generate the tweet payload
@@ -29,19 +29,21 @@ def create_array
 end
 
 def print_header
-  puts "ACHTUNG ACHTUNG"
+  "ACHTUNG ACHTUNG"
 end
 
 def print_footer
-  puts "ENDE ENDE"
+  "ENDE ENDE"
 end
 
 def print_numbers
   index = 0
+  returnstring = ""
   12.times do
-    puts @payload[index..(index + 4)].join("  ")
+    returnstring.concat(@payload[index..(index + 4)].join("  ") + "\n")
     index += 5
   end
+  returnstring
 end
 
 # Send tweet (in test, print to console)
@@ -50,3 +52,5 @@ create_array
 print_header
 print_numbers
 print_footer
+
+client.update(print_header + "\n\n" + print_numbers + "\n" + print_footer)

@@ -13,6 +13,8 @@
 # Uses the Ruby Twitter gem - sends tweets using:
 # client.update("Tweet text here")
 
+#!/usr/bin/ruby
+
 # Configure Twitter API client data by editing in the keys below
 
 require 'twitter'
@@ -50,7 +52,6 @@ end
 # client.update("")
 create_array
 print_header
-print_numbers
+puts print_numbers
 print_footer
-
 client.update(print_header + "\n\n" + print_numbers + "\n" + print_footer)

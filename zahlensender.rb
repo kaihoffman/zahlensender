@@ -27,7 +27,7 @@ end
 
 # Generate the tweet payload
 def create_array
-  @payload = 60.times.map{ rand(9) }
+  @payload = 60.times.map{ rand(10) }
 end
 
 def print_header
